@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix-clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navbar">
+        <img
+          class="logo"
+          src="images/logo.png"
+          alt="logo"
+          width="200"
+          height="110"
+        />
+        <div class="buttons">
+          <button class="language">English</button>
+          <button class="signin">Sign In</button>
+        </div>
+      </nav>
+      <div class="box"></div>
+      <div class="hero">
+        <p class="hero-heading">
+          Unlimited movies,<br />
+          shows, and more
+        </p>
+        <p class="hero-subheading">Starts at ₹149. Cancel at any time.</p>
+        <p class="hero-text">
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+        <div class="get-started">
+          <input
+            class="email"
+            type="email"
+            placeholder="Email address"
+            required
+          />
+          <button>Get Started ></button>
+        </div>
+      </div>
+      <svg
+        class="curved-border-line"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+      >
+        <path d="M0,150 L0,110 Q720,20 1440,110 L1440,150 Z" fill="#000000" />
+
+        <path
+          d="M0,150 L0,110 Q720,20 1440,110 L1440,150 Z"
+          fill="url(#custom-radial-glow)"
+        />
+
+        <path
+          d="M0,110 Q720,20 1440,110"
+          fill="none"
+          stroke="url(#curve-gradient)"
+          stroke-width="4"
+        />
+
+        <defs>
+          <radialGradient
+            id="custom-radial-glow"
+            cx="50%"
+            cy="-420%"
+            r="500%"
+            fx="50%"
+            fy="-420%"
+          >
+            <stop offset="0%" stop-color="rgba(64, 97, 231, 0.4)" />
+            <stop offset="80%" stop-color="rgba(64, 97, 231, 0.4)" />
+            <stop offset="100%" stop-color="rgba(0, 0, 0, 0.1)" />
+          </radialGradient>
+
+          <linearGradient id="curve-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#000000" />
+            <stop offset="20%" stop-color="#701230" />
+            <stop offset="50%" stop-color="#E50914" />
+            <stop offset="80%" stop-color="#701230" />
+            <stop offset="100%" stop-color="#000000" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    
+    <div class="trending-section">
+      <h2>Trending Now</h2>
+      <div class="trending-wrapper">
+        <button class="arrow left-arrow">&#8249;</button>
+          <div class="trending-container">
+            <div class="trending-card">
+              <div class="rank-number">1</div>
+              <img src="images/poster1.avif" alt="Raja Shivaji" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">2</div>
+              <img src="images/poster2.jpg" alt="Bhooth Bangla" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">3</div>
+              <img
+              src="images/poster3.jpg"
+              alt="Teach You A Lesson"
+              class="poster"
+              />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">4</div>
+              <img src="images/poster4.jpg" alt="Maa Behen" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">5</div>
+              <img src="images/poster5.avif" alt="Kara" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">6</div>
+              <img src="images/poster6.jpg" alt="India Got Latent" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">7</div>
+              <img src="images/poster7.jpg" alt="Dhurandhar Revenge" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">8</div>
+              <img src="images/poster8.jpg" alt="Agent Kim Reactivated" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">9</div>
+              <img src="images/poster9.jpg" alt="Dhurandhar" class="poster" />
+            </div>
+
+            <div class="trending-card">
+              <div class="rank-number">10</div>
+              <img src="images/poster10.jpg" alt="Blast" class="poster" />
+            </div>
+          </div>
+        <button class="arrow right-arrow">&#8250;</button>
+       </div>
+    </div>
+
+    <div class="more-reasons">
+      <h2 class="reason-heading">More reasons to join</h2>
+      <div class="reasons-section">
+        <div class="reason-card">
+          <h2 class="reason-heading">Enjoy on your TV</h2>
+          <p class="reason-para">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+          <img src="images/1.png" class="logo">
+        </div>
+
+        <div class="reason-card">
+          <h2 class="reason-heading">Download your shows to watch offline</h2>
+          <p class="reason-para">Save your favourites easily and always have something to watch.</p>
+          <img src="images/2.png" class="logo">
+        </div>
+
+        <div class="reason-card">
+          <h2 class="reason-heading">Watch everywhere</h2>
+          <p class="reason-para">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+          <img src="images/3.png" class="logo">
+        </div>
+
+        <div class="reason-card">
+          <h2 class="reason-heading">Create profiles for kids</h2>
+          <p class="reason-para">Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+          <img src="images/4.png" class="logo">
+        </div>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="FAQ-questions">
+        <div class="FAQ">
+          <div class="question" id="one">
+            <p class="ques">What is Netflix?</p>
+            <img src="images/plus.png" class="plus plus-one">
+          </div>
+          <p class="ans one">
+            Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.<br><br> You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!
+          </p>
+        </div>
+
+        <div class="FAQ">
+          <div class="question" id="two">
+            <p>How much does Netflix cost?</p>
+            <img src="images/plus.png" class="plus plus-two">
+          </div>
+          <p class="ans two">
+            Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649/month.
+          </p>
+        </div>
+
+        <div class="FAQ">
+          <div class="question" id="three">
+            <p>Where can I watch?</p>
+            <img src="images/plus.png" class="plus plus-three">
+          </div>
+          <p class="ans three">
+            Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.<br><br>You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+          </p>
+        </div>
+
+        <div class="FAQ">
+          <div class="question" id="four">
+            <p>How do I cancel?</p>
+            <img src="images/plus.png" class="plus plus-four">
+          </div>
+          <p class="ans four">
+            Netflix is flexible. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+          </p>
+        </div>
+
+        <div class="FAQ">
+          <div class="question" id="five">
+            <p>What can I watch on Netflix?</p>
+            <img src="images/plus.png" class="plus plus-five">
+          </div>
+          <p class="ans five">
+            Netflix has an extensive library of feature films, documentaries, shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+          </p>
+        </div>
+
+        <div class="FAQ">
+          <div class="question" id="six">
+            <p>Is Netflix good for kids?</p>
+            <img src="images/plus.png" class="plus plus-six">
+          </div>
+          <p class="ans six">
+            The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.<br><br>Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower-section">
+      <p class="lower-text">
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+        <div class="get-started" id="lower-login">
+          <input
+            class="email"
+            type="email"
+            placeholder="Email address"
+            required
+          />
+          <button>Get Started ></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+ 

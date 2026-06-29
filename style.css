@@ -1,0 +1,583 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    background-image: url(images/image.png);
+    height: 90vh;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: max(1400px,100vw);
+    overflow: hidden;
+}
+
+.main .box{
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.85) 0%,   /* Deep dark at the top for logo visibility */
+        rgba(0, 0, 0, 0.6) 35%,   /* Becomes clearer over the middle area */
+        rgba(0, 0, 0, 0.65) 65%,   /* Stays relatively clear */
+        rgba(0, 0, 0, 0.9) 100%   /* Deep dark at the bottom to blend with next section */
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+}
+/* Perfect alignment for the SVG curve and black background mask layer */
+.curved-border-line {
+    position: absolute;
+    bottom: -1px; /* Slight offset ensures no faint line gaps at the very bottom edge */
+    left: 0;
+    width: 100%;
+    height: 140px; /* Gives the curve enough height to match your layout screenshot */
+    z-index: 20;   /* Positions it safely above the background overlays */
+    pointer-events: none;
+}
+.main .navbar{
+    display: flex;
+    width: 80vw;
+    justify-content:space-between;
+    align-items: center;
+    margin: auto;
+    height: 100px;
+    position:absolute;
+    z-index: 10;
+    left: 10vw;
+}
+
+.main .navbar .logo{
+    filter: invert(12%) sepia(89%) saturate(5468%) hue-rotate(352deg) brightness(100%) contrast(100%);
+}
+
+.signin{
+    padding: 6px 10px;
+    border-radius:5%;
+    background-color: red;
+    border: none;
+    color:white;
+    font-size:medium;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.language{
+    padding: 5px 15px;
+    border-radius:5%;
+    border:0.25px solid white;
+    color:white;
+    font-size:14px;
+    background-color: black;
+    margin-right: 10px;
+}
+
+.hero{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color:white;
+    position: relative;
+    flex-direction: column;
+    z-index: 10;
+    font-family: 'Bebas Neue', sans-serif; 
+}
+
+.hero-heading{
+    font-size: 56px;
+    font-weight: bolder;
+    margin-bottom: 12px;
+}
+
+.hero-subheading{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.hero-text{
+    margin-bottom: 14px;
+}
+
+.get-started{
+    display: flex;
+    align-items: center;
+}
+.get-started .email{
+    background: transparent;
+    border: solid 1px rgb(186, 182, 182);
+    width: 24vw;
+    height: 7vh;
+    border-radius:1%;
+    padding-left: 5px;
+    font-size: medium;
+}
+
+.get-started button {
+    width: 14vw;
+    height: 7vh;
+    padding: 6px 10px;
+    border-radius:4%;
+    background-color: red;
+    border: none;
+    color:white;
+    font-size:x-large;
+    font-weight: bolder;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.get-started button:hover{
+  background-color: rgba(255, 0, 0, 0.774);
+}
+
+.trending-section {
+    background-color: #000000;
+    color: white;
+    position: relative;
+    z-index: 10;
+    padding: 20px 10vw; 
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.trending-section h2 { 
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px; 
+}
+
+/* The slider row container */
+.trending-container {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling if cards exceed screen width */
+    padding: 15px 0;
+    scrollbar-width: none; /* Hides default scrollbar for Firefox */
+}
+
+.trending-container::-webkit-scrollbar {
+    display:block; /* Hides default scrollbar for Chrome/Safari */
+}
+
+/* Individual card wrapper holding the number and poster */
+.trending-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Aligns both number and poster to the bottom */
+    min-width: 240px; /* Controls card size width */
+    height: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 10%;
+}
+
+/* Subtle scale-up animation when hovering over a movie card */
+.trending-card:hover {
+    transform: scale(1.05);
+}
+
+.rank-number {
+    font-size: 80px;
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Thick fonts work best */
+    font-weight: 600;
+    color: #000000; /* Matches the lower background */
+    line-height: 0.6;
+
+        
+    /* This creates the crisp outline with transparent center */
+    -webkit-text-stroke: 0.2px white; 
+
+    position: absolute;
+    left: 25px;
+    bottom: 30px;
+    z-index: 5; /* Keeps the number structural layer visible on top */
+    user-select: none;
+}
+
+/* The Movie Poster Styling */
+.poster {
+    width: 190px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-left: auto; /* Pushes the poster to the right side of the container cell */
+    position: relative;
+    z-index: 1; /* Sits cleanly beneath the overlapping numbers */
+}
+
+.trending-wrapper {
+    position: relative; /* important — arrows position relative to this */
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    position: absolute; /* floats ON TOP of the cards */
+    top: 50%;
+    transform: translateY(-50%); /* perfectly centers it vertically */
+    background-color: rgba(30, 30, 30, 0.85);
+    color: white;
+    border:none;
+    font-size: 28px;
+    width: 30px;
+    height: 100px;
+    border-radius:8%;
+    cursor: pointer;
+    z-index: 20; /* sits above the cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-arrow {
+    left: -45px; /* sticks to left edge */
+}
+
+.right-arrow {
+    right: -45px; /* sticks to right edge */
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.more-reasons{
+    background-color: #000000;
+    color: white;
+    position: relative;
+    z-index: 10;
+    padding: 20px 10vw; 
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.more-reasons .reason-heading{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; 
+    line-height: 1.3;
+}
+
+.more-reasons .reasons-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.reason-card{
+    width: 20vw;
+    height: 35vh;
+    border: none;
+    padding: 20px 12px;
+    border-radius: 5%;
+    background: linear-gradient(150deg, #151a30 0%, #151a30 40%, #2c040a 100%);
+    position: relative;
+}
+
+.reason-para{
+    font-size: medium;
+    color: rgb(206, 202, 202);
+    line-height: 1.3;
+}
+
+.reason-card .logo{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 65px;
+    height: auto;
+}
+
+.FAQ-section{
+    background-color: black;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    padding: 20px 10vw;
+    z-index: 10;
+}
+
+.FAQ-section h2{
+    padding-bottom: 15px;
+}
+
+.FAQ-questions{
+    display: flex;
+    flex-direction: column;
+    font-size:x-large;
+    row-gap: 10px;
+}
+
+.question{
+    background-color: rgba(147, 145, 145, 0.273);
+    padding: 0px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+}
+
+.question:hover{
+    background-color: rgba(147, 145, 145, 0.482);
+    transition-delay: 0.02s;
+}
+
+.ans{
+    background-color: rgba(147, 145, 145, 0.273);
+    padding: 20px 12px;
+    display: none;
+}
+
+.show{
+  display: block;
+}
+
+.rotate{
+  transform: rotate(45deg);
+}
+
+.FAQ{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.lower-section{
+    color: white;
+    background-color: black;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower-text{
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: medium;
+    margin-top: 32px;
+    margin-bottom: 14px;   
+}
+
+#lower-login{
+    margin-bottom: 48px;
+}
+
+
+/* TABLET — screens up to 1024px */
+@media (max-width: 1024px) {
+  .hero-heading {
+    font-size: 42px;
+  }
+
+  .reason-card {
+    width: 28vw;
+    height: 32vh;
+  }
+
+  .get-started .email {
+    width: 35vw;
+  }
+
+  .get-started button {
+    width: 20vw;
+    font-size: large;
+  }
+}
+
+
+/* TABLET — screens up to 768px  */
+@media (max-width: 768px) {
+  .main .navbar {
+    width: 90vw;
+    left: 5vw;
+  }
+
+  .main .navbar .logo {
+    width: 130px;
+    height: auto;
+  }
+
+  .hero-heading {
+    font-size: 32px;
+  }
+
+  .hero-subheading {
+    font-size: 16px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .get-started {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .get-started .email {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .get-started button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .more-reasons .reasons-section {
+    flex-wrap: wrap;
+  }
+
+  .reason-card {
+    width: 45vw;
+    height: 28vh;
+  }
+
+  .trending-card {
+    min-width: 160px;
+    height: 200px;
+  }
+
+  .poster {
+    width: 140px;
+  }
+
+  .rank-number {
+    font-size: 60px;
+  }
+
+  .FAQ-questions {
+    font-size: large;
+  }
+
+  .arrow {
+    width: 26px;
+    height: 80px;
+    font-size: 22px;
+  }
+
+  .left-arrow {
+    left: -5px;
+  }
+
+  .right-arrow {
+    right: -5px;
+  }
+
+  .trending-section,
+  .more-reasons,
+  .FAQ-section {
+    padding: 20px 6vw;
+  }
+}
+
+
+/* MOBILE — screens up to 480px  */
+@media (max-width: 480px) {
+  .main {
+    height: 100vh;
+  }
+
+  .main .navbar {
+    flex-direction: row;
+    height: 70px;
+  }
+
+  .main .navbar .logo {
+    width: 100px;
+  }
+
+  .signin,
+  .language {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .hero-heading {
+    font-size: 24px;
+  }
+
+  .hero-subheading {
+    font-size: 14px;
+  }
+
+  .more-reasons .reasons-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reason-card {
+    width: 90vw;
+    height: auto;
+    min-height: 180px;
+  }
+
+  .trending-section,
+  .more-reasons,
+  .FAQ-section {
+    padding: 20px 5vw;
+  }
+
+  .trending-card {
+    min-width: 130px;
+    height: 170px;
+  }
+
+  .poster {
+    width: 110px;
+  }
+
+  .rank-number {
+    font-size: 45px;
+    left: 12px;
+    bottom: 15px;
+  }
+
+  .FAQ-questions {
+    font-size: medium;
+  }
+
+  .ques,
+  .ans {
+    font-size: 14px;
+  }
+
+  .arrow {
+    width: 22px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .left-arrow {
+    left: 0px;
+  }
+
+  .right-arrow {
+    right: 0px;
+  }
+
+  .main {
+    background-size: cover;
+  }
+
+  .main .navbar .buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .reason-card .logo {
+    width: 45px;
+  }
+
+  .lower-section .lower-text{
+    padding: 0px 5px;
+    text-align: center;
+  }
+} 

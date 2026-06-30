@@ -365,6 +365,12 @@
     margin-bottom: 48px;
 }
 
+.lowest{
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 
 /* TABLET — screens up to 1024px */
 @media (max-width: 1024px) {
